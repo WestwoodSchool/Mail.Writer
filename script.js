@@ -35,7 +35,7 @@ function typeText(element, text, speed) {
     type();
 }
 
-// AI-Generated Email Logic (Dynamic & Unique)
+// AI-Generated Email Logic (Fully Dynamic)
 function createOriginalEmail(purpose, tone) {
     let greetings = {
         formal: ["Dear [Recipient],", "To Whom It May Concern,", "Hello [Recipient],"],
@@ -58,7 +58,7 @@ function createOriginalEmail(purpose, tone) {
     return `${greeting}\n\n${body}\n\n${closing}\n[Your Name]`;
 }
 
-// AI-Generated Email Body (Original Every Time)
+// AI-Generated Email Body (Fully Unique)
 function generateEmailBody(purpose, tone) {
     let verbs = ["discuss", "follow up on", "clarify", "ask about", "bring to your attention", "request"];
     let adjectives = ["important", "urgent", "exciting", "quick", "essential", "helpful"];
