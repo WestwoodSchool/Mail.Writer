@@ -3,27 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mail Writer</title>
+    <title>AI Mail Writer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Mail Writer ✉️</h1>
-        
-        <label>Choose a Template:</label>
-        <select id="template">
+        <h1>AI Mail Writer ✉️</h1>
+
+        <label for="emailPurpose">What is your email about?</label>
+        <input type="text" id="emailPurpose" placeholder="e.g., Apologizing for missing class">
+
+        <label for="tone">Choose a tone:</label>
+        <select id="tone">
             <option value="formal">Formal</option>
             <option value="casual">Casual</option>
             <option value="funny">Funny</option>
+            <option value="professional">Professional</option>
         </select>
 
-        <label>Subject:</label>
-        <input type="text" id="subject" placeholder="Enter subject...">
-
-        <label>Body:</label>
-        <textarea id="emailBody" placeholder="Your email will appear here..." rows="6"></textarea>
-
         <button onclick="generateEmail()">Generate Email</button>
+
+        <label for="emailOutput">Generated Email:</label>
+        <textarea id="emailOutput" rows="6" readonly></textarea>
+
         <button onclick="copyToClipboard()">Copy Email</button>
     </div>
 
