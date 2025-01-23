@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail Writer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mail Writer ✉️</h1>
+        
+        <label>Choose a Template:</label>
+        <select id="template">
+            <option value="formal">Formal</option>
+            <option value="casual">Casual</option>
+            <option value="funny">Funny</option>
+        </select>
+
+        <label>Subject:</label>
+        <input type="text" id="subject" placeholder="Enter subject...">
+
+        <label>Body:</label>
+        <textarea id="emailBody" placeholder="Your email will appear here..." rows="6"></textarea>
+
+        <button onclick="generateEmail()">Generate Email</button>
+        <button onclick="copyToClipboard()">Copy Email</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
