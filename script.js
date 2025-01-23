@@ -8,10 +8,34 @@ function generateEmail() {
         return;
     }
 
-    let email = createOriginalEmail(purpose, tone);
-    output.value = email;
+    output.value = "AI is thinking... 🤖"; // Show loading text
+    output.disabled = true; // Disable input while AI is "typing"
+
+    let emailContent = createOriginalEmail(purpose, tone);
+
+    // Call the typing effect function
+    typeText(output, emailContent, 30); // Adjust speed (lower = faster)
 }
 
+// Function to simulate AI typing effect
+function typeText(element, text, speed) {
+    element.value = ""; // Clear previous text
+    let index = 0;
+
+    function type() {
+        if (index < text.length) {
+            element.value += text.charAt(index);
+            index++;
+            setTimeout(type, speed);
+        } else {
+            element.disabled = false; // Re-enable textarea after typing
+        }
+    }
+
+    type();
+}
+
+// AI-Generated Email Logic (Dynamic & Unique)
 function createOriginalEmail(purpose, tone) {
     let greetings = {
         formal: ["Dear [Recipient],", "To Whom It May Concern,", "Hello [Recipient],"],
@@ -29,13 +53,12 @@ function createOriginalEmail(purpose, tone) {
 
     let greeting = getRandomElement(greetings[tone]);
     let closing = getRandomElement(closings[tone]);
-
-    // AI-like email creation (dynamic & unique)
     let body = generateEmailBody(purpose, tone);
 
     return `${greeting}\n\n${body}\n\n${closing}\n[Your Name]`;
 }
 
+// AI-Generated Email Body (Original Every Time)
 function generateEmailBody(purpose, tone) {
     let verbs = ["discuss", "follow up on", "clarify", "ask about", "bring to your attention", "request"];
     let adjectives = ["important", "urgent", "exciting", "quick", "essential", "helpful"];
