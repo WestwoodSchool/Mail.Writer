@@ -10,24 +10,33 @@
     <div class="container">
         <h1>AI Mail Writer ✉️</h1>
 
-        <label for="emailPurpose">What is your email about?</label>
-        <input type="text" id="emailPurpose" placeholder="e.g., Apologizing for missing class">
+        <div class="input-group">
+            <label for="emailPurpose">What is your email about?</label>
+            <input type="text" id="emailPurpose" placeholder="e.g., Apologizing for missing class">
+        </div>
 
-        <label for="tone">Choose a tone:</label>
-        <select id="tone">
-            <option value="formal">Formal</option>
-            <option value="casual">Casual</option>
-            <option value="funny">Funny</option>
-            <option value="professional">Professional</option>
-        </select>
+        <div class="input-group">
+            <label for="tone">Choose a tone:</label>
+            <select id="tone">
+                <option value="formal">Formal</option>
+                <option value="casual">Casual</option>
+                <option value="funny">Funny</option>
+                <option value="professional">Professional</option>
+            </select>
+        </div>
 
         <button onclick="generateEmail()">Generate Email</button>
 
-        <label for="emailOutput">Generated Email:</label>
-        <textarea id="emailOutput" rows="6" readonly></textarea>
-
-        <button onclick="copyToClipboard()">Copy Email</button>
+        <div class="output-group">
+            <label for="emailOutput">Generated Email:</label>
+            <textarea id="emailOutput" rows="6" readonly></textarea>
+            <button onclick="copyToClipboard()">Copy Email</button>
+        </div>
     </div>
+
+    <footer>
+        <p>Made by <strong>Simon Drastil</strong> 🚀</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
