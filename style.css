@@ -1,82 +1,108 @@
-/* Dark Green Themed AI Mail Writer */
+/* Global Styling */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #0d1117; /* Dark Background */
-    color: #c9d1d9; /* Light text */
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle at top, #0a0f17, #000000);
+    color: #d1f7d9;
     text-align: center;
     padding: 20px;
+    overflow-x: hidden;
 }
 
+/* 3D Glass Effect Container */
 .container {
-    background: #161b22; /* Darker Card */
+    background: rgba(18, 32, 47, 0.8); /* Glass effect */
+    backdrop-filter: blur(15px);
     padding: 20px;
     max-width: 500px;
     margin: auto;
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 255, 100, 0.3); /* Green Glow */
-    border: 1px solid #238636; /* Green Border */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 255, 100, 0.3); /* Green Glow */
+    border: 2px solid rgba(0, 255, 100, 0.2);
+    animation: fadeIn 1s ease-in-out;
 }
 
+/* Title */
 h1 {
-    color: #26d96f; /* Neon Green Title */
-    font-size: 24px;
+    font-size: 26px;
+    color: #00ff99;
+    text-shadow: 0px 0px 10px rgba(0, 255, 100, 0.8);
+    animation: glow 1.5s infinite alternate;
 }
 
+/* Label Styling */
 label {
     display: block;
-    font-weight: bold;
+    font-weight: 600;
     margin-top: 15px;
-    color: #8b949e; /* Soft Gray */
+    color: #a8f0c6;
+    text-shadow: 0px 0px 5px rgba(0, 255, 100, 0.6);
 }
 
+/* Input, Select & Textarea */
 input, select, textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-top: 10px;
-    border-radius: 6px;
-    border: 1px solid #238636; /* Green Border */
-    background-color: #0d1117; /* Dark Input */
-    color: #c9d1d9;
+    border-radius: 10px;
+    border: none;
     outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #d1f7d9;
     font-size: 14px;
+    box-shadow: inset 0px 0px 10px rgba(0, 255, 100, 0.2);
+    transition: 0.3s;
 }
 
 input:focus, select:focus, textarea:focus {
-    border-color: #26d96f;
-    box-shadow: 0 0 5px rgba(38, 217, 111, 0.5);
+    box-shadow: 0 0 15px rgba(0, 255, 100, 0.8);
 }
 
+/* 3D Glowing Buttons */
 button {
     margin-top: 15px;
-    padding: 12px;
-    background: #26d96f; /* Bright Green */
-    color: #0d1117; /* Dark Text */
-    border: none;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
+    padding: 12px 20px;
     font-size: 16px;
-    transition: all 0.2s ease-in-out;
+    font-weight: bold;
+    background: linear-gradient(145deg, #00ff99, #00cc77);
+    color: #002b26;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(0, 255, 100, 0.5);
 }
 
 button:hover {
-    background: #20c468;
-    box-shadow: 0 0 10px rgba(38, 217, 111, 0.6);
+    transform: scale(1.05);
+    box-shadow: 0px 10px 25px rgba(0, 255, 100, 0.8);
 }
 
+/* Textarea */
 textarea {
     resize: none;
     height: 150px;
 }
 
-/* Dark Mode Toggle Button (Optional) */
-.toggle-theme {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    color: #26d96f;
-    font-size: 18px;
-    cursor: pointer;
+/* Glowing Animation */
+@keyframes glow {
+    0% {
+        text-shadow: 0px 0px 10px rgba(0, 255, 100, 0.8);
+    }
+    100% {
+        text-shadow: 0px 0px 20px rgba(0, 255, 100, 1);
+    }
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
